@@ -2,7 +2,7 @@ import "./home.css"
 import Header from "../../components/todo/ToDoHeader/ToDoHeader"
 import AddButton from '../../components/todo/AddToDoButton/AddToDoButton.tsx';
 import List from '../../components/todo/ToDoList/ToDoList.tsx';
-
+import ToDoSummary from "../../components/todo/ToDoSummary/ToDoSummary.tsx";
 
 
 function home() {
@@ -11,22 +11,7 @@ function home() {
       <Header/>
 
       <div className="card">
-        <div className="input-group">
-          <label htmlFor="task">Task</label>
-          <input
-            type="text"
-            id="task"
-            placeholder="Enter task"
-          />
-        </div>
-
-        <div className="input-group">
-          <label htmlFor="deadline">Deadline</label>
-          <input
-            type="date"
-            id="deadline"
-          />
-        </div>
+        <ToDoSummary/>
 
         <AddButton />
       </div>
