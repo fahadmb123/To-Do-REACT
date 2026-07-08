@@ -18,7 +18,7 @@ function home() {
 
       <List/>
     </div>
-  );
+  )
 }
 
 
