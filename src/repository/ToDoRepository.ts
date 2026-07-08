@@ -8,3 +8,7 @@ export function save(toDo:ToDo){
 
 }
 
+
+export function getToDos ():ToDo {
+    return JSON.parse(localStorage.getItem("todos") || "[]")
+} 
