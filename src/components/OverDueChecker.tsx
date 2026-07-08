@@ -13,7 +13,7 @@ function OverDueChecker() {
             const deadline = new Date(todo.deadline);
 
             if (!todo.completed && deadline < today) {
-                toast.error(`${todo.deadline} Deadline Reached Task : ${todo.title}`)
+                toast.error(`Task:${todo.title} Over Due :${todo.deadline} `)
             }
         });
     }, [todos]);
