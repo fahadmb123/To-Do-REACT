@@ -1,4 +1,4 @@
-import type { ToDo ,messageType} from "../types/modal"
+import type { ToDo ,messageType,summaryDetails} from "../types/modal"
 import {save,getToDos,saveTodos} from "../repository/ToDoRepository"
 import useTodoStore from "../store/toDoStore";
 
@@ -96,4 +96,23 @@ export function updateToDo (toDo:ToDo) :messageType{
 
 export function getToDo ():ToDo[] {
     return getToDos()
+}
+
+
+export function getSummary(todos: ToDo[]): summaryDetails {
+    const completed = todos.filter((todo) => todo.completed);
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const pending = todos.filter((todo) => {
+        const deadline = new Date(todo.deadline);
+        return !todo.completed && deadline >= today;
+    });
+
+    return {
+        totalTask: todos.length,
+        completedTask: completed.length,
+        pending: pending.length,
+    };
 }

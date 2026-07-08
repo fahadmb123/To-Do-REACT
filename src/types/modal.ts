@@ -31,3 +31,9 @@ export type messageType = {
   success : boolean;
   message : string;
 }
+
+export type summaryDetails = {
+  totalTask : number;
+  completedTask : number;
+  pending : number
+}

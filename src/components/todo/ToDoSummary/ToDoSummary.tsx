@@ -1,6 +1,13 @@
 import "./ToDoSummary.css";
+import { getSummary } from "../../../service/toDoService";
+import useTodoStore from "../../../store/toDoStore";
+
 
 function ToDoSummary() {
+
+  const todos = useTodoStore((state) => state.todos);
+  const result = getSummary(todos);
+  
   return (
     <div className="todo-summary">
       <h2>Todo Summary</h2>
@@ -8,17 +15,17 @@ function ToDoSummary() {
       <div className="summary">
         <div className="summary-item">
           <span>Total Tasks</span>
-          <strong>10</strong>
+          <strong>{result.totalTask}</strong>
         </div>
 
         <div className="summary-item">
           <span>Completed</span>
-          <strong>4</strong>
+          <strong>{result.completedTask}</strong>
         </div>
 
         <div className="summary-item">
           <span>Pending</span>
-          <strong>6</strong>
+          <strong>{result.pending}</strong>
         </div>
       </div>
     </div>
