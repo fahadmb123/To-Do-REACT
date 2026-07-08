@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getToDo } from "./service/toDoService";
 import useTodoStore from "./store/toDoStore";
+import OverDueChecker from "./components/OverDueChecker";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     <>
       <Home />
 
-
+      <OverDueChecker/>
       <ToastContainer/>
     </>
   )
