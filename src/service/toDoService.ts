@@ -116,3 +116,5 @@ export function getSummary(todos: ToDo[]): summaryDetails {
         pending: pending.length,
     };
 }
+
+
