@@ -1,17 +1,14 @@
 import Item from '../ToDoItem/ToDoItem';
 import "./ToDoList.css"
-
+import useTodoStore from '../../../store/toDoStore';
 
 function List () {
+    const todos = useTodoStore((state) => state.todos);
+
     return (
         <>
             <div className="task-list">
-                <Item title='Learn DSA' date='08 jun 2007' completed={true}/>
-
-                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
-                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
-                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
-                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
+                {todos.map((toDo)=>(<Item toDo={toDo} />))}
             </div>
         </>
     )

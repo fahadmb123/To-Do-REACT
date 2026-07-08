@@ -1,16 +1,16 @@
 import type { ItemProps } from "../../../types/modal"
 
-function Item ({title,date,completed}:ItemProps) {
+function Item ({toDo}:ItemProps) {
     return (
         <>
-            <div className={completed ? "task completed" : "task"}>
+            <div className={toDo?.completed ? "task completed" : "task"}>
                 <div className="task-info">
-                    <h3>{title}</h3>
-                    <p>{date}</p>
+                    <h3>{toDo?.title}</h3>
+                    <p>{toDo?.deadline}</p>
                 </div>
 
                 <div className="actions">
-                    <button className="complete">{completed ? "Completed" : "Complete"}</button>
+                    <button className="complete">{toDo?.completed ? "Completed" : "Complete"}</button>
                     <button className="edit">Edit</button>
                     <button className="delete">Delete</button>
                 </div>

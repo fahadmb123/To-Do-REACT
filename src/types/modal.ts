@@ -18,7 +18,5 @@ export type ToDoStore = {
 
 
 export type ItemProps = {
-    title : string;
-    date : string;
-    completed:boolean
+    toDo :ToDo
 }
