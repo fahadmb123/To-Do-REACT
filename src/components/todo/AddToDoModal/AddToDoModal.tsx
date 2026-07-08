@@ -1,10 +1,9 @@
 import "./AddToDoModal.css";
-import type {ModalProps,ToDo} from "../../../types/modal"
+import type {ModalProps} from "../../../types/modal"
 import { useState } from "react";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import useTodoStore from "../../../store/toDoStore";
-import { addToDo as save } from "../../../service/toDoService";
+import { addToDo } from "../../../service/toDoService";
 
 
 
@@ -13,26 +12,16 @@ function Modal({closeModal}:ModalProps) {
   const [title,setTtle] = useState("")
   const [deadline,setDeadline] = useState("")
   
-  function handleClick(){
+  function handleClick() {
+    
+    const result = addToDo(title,deadline);
 
-    if (title.trim().length < 4) {
-      toast.error("Please enter at least 4 letters");
-      return;
-    } else if (!deadline) {
-      toast.error("Please select DeadLine");
+    if (!result.success) {
+      toast.error(result.message);
       return;
     }
-    toast.success("Task Added sucsessfully")
-    const toDo:ToDo = {
-      id: Date.now(),
-      completed : false,
-      deadline : deadline,
-      title : title
-    }
 
-    const addToDo =  useTodoStore.getState().addToDo
-    addToDo(toDo)
-    save(toDo)
+    toast.success("Task Added Successfully");
     closeModal();
   }
 
