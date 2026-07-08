@@ -1,10 +1,10 @@
 import "./home.css"
-
+import Header from "../../components/todo/ToDoHeader/ToDoHeader"
 
 function home() {
   return (
     <div className="container">
-      <h1>Todo App</h1>
+      <Header/>
 
       <div className="card">
         <div className="input-group">
