@@ -1,8 +1,25 @@
 import "./AddToDoModal.css";
-import type {ModalProps} from "../../../types/modal"
+import type {ModalProps,ToDo} from "../../../types/modal"
+import { useState } from "react";
+
+
 
 
 function Modal({closeModal}:ModalProps) {
+
+  const [title,setTtle] = useState("")
+  const [deadline,setDeadline] = useState("")
+  
+  function handleClick(){
+
+    const toDo:ToDo = {
+      id: Date.now(),
+      completed : false,
+      deadline : deadline,
+      title : title
+    }
+    console.log(toDo)
+  }
 
   return (
     <div className="modal-overlay">
@@ -15,6 +32,8 @@ function Modal({closeModal}:ModalProps) {
             type="text"
             id="task"
             placeholder="Enter task"
+            value={title}
+            onChange={(e)=>{setTtle(e.target.value)}}
           />
         </div>
 
@@ -23,12 +42,14 @@ function Modal({closeModal}:ModalProps) {
           <input
             type="date"
             id="deadline"
+            value={deadline}
+            onChange={(e)=>{setDeadline(e.target.value)}}
           />
         </div>
 
         <div className="modal-buttons">
           <button className="cancel-btn" onClick={closeModal}>Cancel</button>
-          <button className="save-btn" onClick={closeModal}>Save</button>
+          <button className="save-btn" onClick={()=>{closeModal();handleClick()}} >Save</button>
         </div>
       </div>
     </div>
