@@ -1,9 +1,11 @@
 import { create } from "zustand";
+import type { ToDoStore } from "../types/modal";
 
-const useTodoStore = create((set) => ({
+
+const useTodoStore = create<ToDoStore>((set) => ({
     todos: [],
 
-    addTodo: (todo) =>
+    addToDo: (todo) =>
         set((state) => ({
             todos: [...state.todos, todo],
         })),
