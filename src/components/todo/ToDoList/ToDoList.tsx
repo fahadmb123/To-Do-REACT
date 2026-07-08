@@ -1,35 +1,17 @@
-import './ToDoList.css';
+import Item from '../ToDoItem/ToDoItem';
+
 
 
 function List () {
     return (
         <>
             <div className="task-list">
-                <div className="task">
-                <div className="task-info">
-                    <h3>Learn React</h3>
-                    <p>📅 10 July 2026</p>
-                </div>
+                <Item title='Learn DSA' date='08 jun 2007' completed={true}/>
 
-                <div className="actions">
-                    <button className="complete">Complete</button>
-                    <button className="edit">Edit</button>
-                    <button className="delete">Delete</button>
-                </div>
-                </div>
-
-                <div className="task completed">
-                <div className="task-info">
-                    <h3>Practice TypeScript</h3>
-                    <p>📅 08 July 2026</p>
-                </div>
-
-                <div className="actions">
-                    <button className="complete">Completed</button>
-                    <button className="edit">Edit</button>
-                    <button className="delete">Delete</button>
-                </div>
-                </div>
+                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
+                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
+                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
+                <Item title='Learn REACT' date='12 Mar 2007' completed={false}/>
             </div>
         </>
     )
