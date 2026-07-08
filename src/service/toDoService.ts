@@ -66,7 +66,33 @@ export function deleteCard (id:number):messageType {
     }
 }
 
+export function updateToDo (toDo:ToDo) :messageType{
 
+    if (toDo.title.trim().length < 4) {
+        return {
+            success: false,
+            message: "Please enter at least 4 letters"
+        };
+    }
+
+    if (!toDo.deadline) {
+        return {
+            success: false,
+            message: "Please select Deadline"
+        };
+    }
+
+
+    useTodoStore.getState().updateTodo(toDo)
+
+    const todos = useTodoStore.getState().todos
+
+    saveTodos(todos)
+    return {
+        success:true,
+        message : "Edited Successfully"
+    }
+}
 
 export function getToDo ():ToDo[] {
     return getToDos()

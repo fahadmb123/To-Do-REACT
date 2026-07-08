@@ -1,27 +1,44 @@
 import "./AddToDoModal.css";
-import type {ModalProps} from "../../../types/modal"
+import type {messageType, ModalProps} from "../../../types/modal"
 import { useState } from "react";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addToDo } from "../../../service/toDoService";
+import { addToDo,updateToDo } from "../../../service/toDoService";
 
 
+function showMessage (result:messageType) {
+  if (result.success) {
+    toast.success(result.message)
+  } else {
+    toast.error(result.message)
+    return {fail:true}
+  }
+}
 
-function Modal({closeModal}:ModalProps) {
+function Modal({closeModal,toDo}:ModalProps) {
 
-  const [title,setTtle] = useState("")
-  const [deadline,setDeadline] = useState("")
+  const [title,setTtle] = useState(toDo ? toDo.title :"")
+  const [deadline,setDeadline] = useState(toDo ? toDo.deadline :"")
   
   function handleClick() {
+
+    if (toDo) {
+      const result = updateToDo({
+        deadline : deadline,
+        title : title,
+        id : toDo.id,
+        completed : toDo.completed
+      })
+      const fail = showMessage(result)
+      if (fail) return
+      closeModal();
+      return
+    }
     
     const result = addToDo(title,deadline);
 
-    if (!result.success) {
-      toast.error(result.message);
-      return;
-    }
-
-    toast.success(result.message)
+    const fail = showMessage(result)
+    if (fail) return
     closeModal();
   }
 

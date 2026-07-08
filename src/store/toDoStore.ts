@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { ToDoStore } from "../types/modal";
+import type { ToDoStore,ToDo } from "../types/modal";
 
 
 const useTodoStore = create<ToDoStore>((set) => ({
@@ -23,7 +23,15 @@ const useTodoStore = create<ToDoStore>((set) => ({
     delete : (id:number) => 
         set((state) => ({
             todos : state.todos.filter ((todo)=>todo.id !== id)
-        }))
+        })),
+    updateTodo: (toDo:ToDo) =>
+        set((state) => ({
+            todos: state.todos.map((todo) =>
+                todo.id === toDo.id
+                    ? toDo
+                    : todo
+            )
+        })),
 }));
 
 export default useTodoStore;

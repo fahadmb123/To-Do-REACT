@@ -1,5 +1,6 @@
 export type ModalProps = {
   closeModal: () => void;
+  toDo ? : ToDo;
 };
 
 
@@ -16,7 +17,8 @@ export type ToDoStore = {
   toggleCompleted: (id: number) => void;
   setToDos: (toDos: ToDo[]) => void;
   addToDo: (todo:ToDo)=>void;
-  delete : (id:number) => void
+  delete : (id:number) => void;
+  updateTodo : (toDo:ToDo) => void;
 }
 
 
