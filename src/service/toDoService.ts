@@ -4,7 +4,7 @@ import useTodoStore from "../store/toDoStore";
 
 
 
-export function addToDo (title: string, deadline: string):{success:boolean,message?:string} {
+export function addToDo (title: string, deadline: string):messageType {
     if (title.trim().length < 4) {
         return {
             success: false,
@@ -31,7 +31,8 @@ export function addToDo (title: string, deadline: string):{success:boolean,messa
     save(todo);
 
     return {
-        success: true
+        success: true,
+        message:'Tasks Added sucecssfully'
     };
     
 }
