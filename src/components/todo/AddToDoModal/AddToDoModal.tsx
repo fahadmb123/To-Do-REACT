@@ -4,6 +4,8 @@ import { useState } from "react";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useTodoStore from "../../../store/toDoStore";
+import { addToDo as save } from "../../../service/toDoService";
+
 
 
 function Modal({closeModal}:ModalProps) {
@@ -27,10 +29,10 @@ function Modal({closeModal}:ModalProps) {
       deadline : deadline,
       title : title
     }
-    
+
     const addToDo =  useTodoStore.getState().addToDo
     addToDo(toDo)
-
+    save(toDo)
     closeModal();
   }
 
