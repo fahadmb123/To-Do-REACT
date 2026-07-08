@@ -21,7 +21,7 @@ function Modal({closeModal}:ModalProps) {
       return;
     }
 
-    
+    toast.success(result.message)
     closeModal();
   }
 

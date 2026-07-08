@@ -32,7 +32,7 @@ export function addToDo (title: string, deadline: string):messageType {
 
     return {
         success: true,
-        message:'Tasks Added sucecssfully'
+        message:'Task Added sucecssfully'
     };
     
 }
