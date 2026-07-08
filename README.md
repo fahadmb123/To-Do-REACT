@@ -1,75 +1,104 @@
-# React + TypeScript + Vite
+# React To-Do List Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+This is a simple To-Do List application built with **React**, **TypeScript**, and **Zustand** as part of my React learning journey.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The goal of this project was to understand React fundamentals, state management, component architecture, and TypeScript while building a real application.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Add new tasks
+- Edit existing tasks
+- Delete tasks
+- Mark tasks as completed
+- Set task deadlines
+- Store tasks in Local Storage
+- Toast notifications for:
+  - Validation errors
+  - Successful operations
+  - Tasks due within the next 3 days
+- Task summary
+  - Total Tasks
+  - Completed Tasks
+  - Pending Tasks
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- React
+- TypeScript
+- Vite
+- Zustand
+- React Toastify
+- CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Project Structure
 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+src/
+│
+├── components/
+├── pages/
+├── service/
+├── repository/
+├── store/
+├── types/
+└── App.tsx
 ```
+
+---
+
+## What I Learned
+
+Through this project I practiced:
+
+- React Components
+- Props
+- State Management
+- React Hooks
+  - useState
+  - useEffect
+- Zustand for global state management
+- TypeScript interfaces and types
+- Local Storage
+- Form validation
+- Component communication
+- CRUD operations
+- Project structure using Service and Repository pattern
+
+---
+
+## Installation
+
+```bash
+git clone <repository-url>
+
+cd project-folder
+
+npm install
+
+npm run dev
+```
+
+---
+
+## Future Improvements
+
+- Search tasks
+- Filter tasks
+- Sort by deadline
+- Dark mode
+- Backend integration
+- User authentication
+
+---
+
+## Author
+
+Made by **Fahad** as part of my React learning.
