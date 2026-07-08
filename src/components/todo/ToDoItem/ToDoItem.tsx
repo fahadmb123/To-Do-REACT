@@ -1,6 +1,20 @@
 import type { ItemProps } from "../../../types/modal"
+import { toggleComplete as toggle } from "../../../service/toDoService"
+import { toast } from "react-toastify"
+
 
 function Item ({toDo}:ItemProps) {
+
+    function toggleComplete (id:number):void {
+        const result = toggle(id)
+
+        if (result.success) {
+            toast.success("Updated Successfully...")
+        }else {
+            toast.error("Updation failed")
+        }
+    }
+
     return (
         <>
             <div className={toDo?.completed ? "task completed" : "task"}>
@@ -10,7 +24,7 @@ function Item ({toDo}:ItemProps) {
                 </div>
 
                 <div className="actions">
-                    <button className="complete">{toDo?.completed ? "Completed" : "Complete"}</button>
+                    <button onClick={()=>{toggleComplete(toDo.id)}} className="complete">{toDo?.completed ? "Completed" : "Complete"}</button>
                     <button className="edit">Edit</button>
                     <button className="delete">Delete</button>
                 </div>

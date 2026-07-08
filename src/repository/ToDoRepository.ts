@@ -9,6 +9,9 @@ export function save(toDo:ToDo):void{
 
 }
 
+export function saveTodos(todo:ToDo[]) {
+    localStorage.setItem("todos",JSON.stringify(todo))
+}
 
 export function getToDos ():ToDo[] {
     return JSON.parse(localStorage.getItem("todos") || "[]")

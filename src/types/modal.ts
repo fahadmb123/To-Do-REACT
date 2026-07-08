@@ -13,6 +13,7 @@ export type ToDo = {
 
 export type ToDoStore = {
   todos : ToDo[];
+  toggleCompleted: (id: number) => void;
   setToDos: (toDos: ToDo[]) => void;
   addToDo: (todo:ToDo)=>void
 }

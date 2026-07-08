@@ -1,10 +1,10 @@
 import type { ToDo } from "../types/modal"
-import {save,getToDos} from "../repository/ToDoRepository"
+import {save,getToDos,saveTodos} from "../repository/ToDoRepository"
 import useTodoStore from "../store/toDoStore";
 
 
 
-export function addToDo (title: string, deadline: string) {
+export function addToDo (title: string, deadline: string):{success:boolean,message?:string} {
     if (title.trim().length < 4) {
         return {
             success: false,
@@ -35,6 +35,20 @@ export function addToDo (title: string, deadline: string) {
     };
     
 }
+
+
+export function toggleComplete (id:number):{success:boolean} {
+
+    useTodoStore.getState().toggleCompleted(id)
+
+    const todos = useTodoStore.getState().todos
+
+    saveTodos(todos)
+
+    return {success:true}
+
+}
+
 
 export function getToDo ():ToDo[] {
     return getToDos()

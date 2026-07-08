@@ -4,6 +4,17 @@ import type { ToDoStore } from "../types/modal";
 
 const useTodoStore = create<ToDoStore>((set) => ({
     todos: [],
+    toggleCompleted: (id:number) =>
+        set((state) => ({
+            todos: state.todos.map((todo) =>
+                todo.id === id
+                    ? {
+                        ...todo,
+                        completed: !todo.completed
+                    }
+                    : todo
+            )
+        })),
     setToDos: (todos) => set({ todos }),
     addToDo: (todo) =>
         set((state) => ({
