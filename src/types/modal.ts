@@ -15,10 +15,17 @@ export type ToDoStore = {
   todos : ToDo[];
   toggleCompleted: (id: number) => void;
   setToDos: (toDos: ToDo[]) => void;
-  addToDo: (todo:ToDo)=>void
+  addToDo: (todo:ToDo)=>void;
+  delete : (id:number) => void
 }
 
 
 export type ItemProps = {
     toDo :ToDo
+}
+
+
+export type messageType = {
+  success : boolean;
+  message : string;
 }

@@ -20,6 +20,10 @@ const useTodoStore = create<ToDoStore>((set) => ({
         set((state) => ({
             todos: [...state.todos, todo],
         })),
+    delete : (id:number) => 
+        set((state) => ({
+            todos : state.todos.filter ((todo)=>todo.id !== id)
+        }))
 }));
 
 export default useTodoStore;
