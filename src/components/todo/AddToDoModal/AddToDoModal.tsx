@@ -1,6 +1,9 @@
 import "./AddToDoModal.css";
+import type {ModalProps} from "../../../types/modal"
 
-function Modal() {
+
+function Modal({closeModal}:ModalProps) {
+
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -24,8 +27,8 @@ function Modal() {
         </div>
 
         <div className="modal-buttons">
-          <button className="cancel-btn">Cancel</button>
-          <button className="save-btn">Save</button>
+          <button className="cancel-btn" onClick={closeModal}>Cancel</button>
+          <button className="save-btn" onClick={closeModal}>Save</button>
         </div>
       </div>
     </div>
