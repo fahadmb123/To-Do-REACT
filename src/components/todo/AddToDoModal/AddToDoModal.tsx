@@ -1,7 +1,8 @@
 import "./AddToDoModal.css";
 import type {ModalProps,ToDo} from "../../../types/modal"
 import { useState } from "react";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -12,6 +13,11 @@ function Modal({closeModal}:ModalProps) {
   
   function handleClick(){
 
+    if (title.length > 4) {
+      toast.error("Please Fill the Task atleast 4 letters")
+      return
+    }
+    toast.success("Task Added sucsessfully")
     const toDo:ToDo = {
       id: Date.now(),
       completed : false,
