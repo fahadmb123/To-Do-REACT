@@ -1,5 +1,6 @@
 import "./home.css"
 import Header from "../../components/todo/ToDoHeader/ToDoHeader"
+import AddButton from '../../components/todo/AddToDoButton/AddToDoButton.tsx';
 
 function home() {
   return (
@@ -24,7 +25,7 @@ function home() {
           />
         </div>
 
-        <button>Add Task</button>
+        <AddButton />
       </div>
 
       <div className="task-list">
