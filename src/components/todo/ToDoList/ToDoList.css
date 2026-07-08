@@ -1,0 +1,20 @@
+.task-list {
+    max-height: 420px;   /* Adjust as needed */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
