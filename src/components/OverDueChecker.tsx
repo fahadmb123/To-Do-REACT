@@ -26,7 +26,7 @@ function OverDueChecker() {
             const daysLeft = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
 
             if (dueSoon && !notified.current.has(todo.id)) {
-                toast.warning(`${todo.title} is due within ${daysLeft}`);
+                toast.warning(`${todo.title} is due within ${daysLeft} days`);
                 notified.current.add(todo.id);
             }
         });
