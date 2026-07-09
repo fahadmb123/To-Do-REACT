@@ -18,7 +18,7 @@ const useTodoStore = create<ToDoStore>((set) => ({
     setToDos: (todos) => set({ todos }),
     addToDo: (todo) =>
         set((state) => ({
-            todos: [...state.todos, todo],
+            todos: [ todo,...state.todos],
         })),
     delete : (id:number) => 
         set((state) => ({
