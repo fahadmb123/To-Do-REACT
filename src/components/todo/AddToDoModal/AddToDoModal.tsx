@@ -1,6 +1,6 @@
 import "./AddToDoModal.css";
 import type {messageType, ModalProps} from "../../../types/modal"
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addToDo,updateToDo } from "../../../service/toDoService";
@@ -42,6 +42,13 @@ function Modal({closeModal,toDo}:ModalProps) {
     closeModal();
   }
 
+
+  const inputReference = useRef<HTMLInputElement>(null)
+
+  useEffect(()=>{
+    inputReference.current?.focus()
+  },[])
+
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -55,6 +62,7 @@ function Modal({closeModal,toDo}:ModalProps) {
             placeholder="Enter task"
             value={title}
             onChange={(e)=>{setTtle(e.target.value)}}
+            ref={inputReference}
           />
         </div>
 
