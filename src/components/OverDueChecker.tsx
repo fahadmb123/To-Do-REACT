@@ -22,8 +22,11 @@ function OverDueChecker() {
                 deadline >= today &&
                 deadline <= threeDaysLater;
 
+            const diffInMs = deadline.getTime() - today.getTime();
+            const daysLeft = Math.ceil(diffInMs / (1000 * 60 * 60 * 24));
+
             if (dueSoon && !notified.current.has(todo.id)) {
-                toast.warning(`${todo.title} is due within 3 days..`);
+                toast.warning(`${todo.title} is due within ${daysLeft} days`);
                 notified.current.add(todo.id);
             }
         });

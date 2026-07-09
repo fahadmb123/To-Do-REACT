@@ -4,8 +4,7 @@ import useTodoStore from '../../../store/toDoStore';
 
 function List () {
     const todos = useTodoStore((state) => state.todos);
-    console.log("todos:", todos);
-    console.log(Array.isArray(todos));
+    
     return (
         <>
             <div className="task-list">

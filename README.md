@@ -77,7 +77,7 @@ Through this project I practiced:
 ## Installation
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/fahadmb123/To-Do-REACT
 
 cd project-folder
 

@@ -45,7 +45,7 @@ function Item ({toDo}:ItemProps) {
 
                 <div className="actions">
                     <button onClick={()=>{toggleComplete(toDo.id)}} className="complete">{toDo?.completed ? "Completed" : "Complete"}</button>
-                    <button onClick={()=>{setModal()}} className="edit">Edit</button>
+                    {!toDo.completed && (<button onClick={()=>{setModal()}} className="edit">Edit</button>)}
                     <button onClick={()=>{deleteItem(toDo?.id)}} className="delete">Delete</button>
                 </div>
             </div>
