@@ -26,4 +26,3 @@ export function saveTodos(todo:ToDo[]) {
 export function getToDos ():ToDo[] {
     return JSON.parse(localStorage.getItem("todos") || "[]")
 }
-

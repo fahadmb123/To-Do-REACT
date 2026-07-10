@@ -7,9 +7,6 @@ import ToDoSummary from "../../components/todo/ToDoSummary/ToDoSummary.tsx";
 
 
 function home() {
-
-  
-
   
   return (
     <div className="container">
