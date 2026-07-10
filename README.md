@@ -10,13 +10,13 @@
 
 ---
 
-## 🎥 Demo
+### 📷 Project Preview
 
 <p align="center">
-  <img src="./src//assets/To-Do-Demo.gif" alt="To-Do App Demo" width="900"/>
+  <img src="/src/assets/To-Do-Demo.gif" width="800">
 </p>
 
-
+</div>
 
 ---
 
