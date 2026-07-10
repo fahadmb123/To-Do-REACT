@@ -13,10 +13,10 @@
 ## 🎥 Demo
 
 <p align="center">
-  <img src="./src//assets/To-Do-Demo.ogg" alt="To-Do App Demo" width="900"/>
+  <img src="./src//assets/To-Do-Demo.gif" alt="To-Do App Demo" width="900"/>
 </p>
 
-> Replace `./assets/todo-demo.gif` with your actual GIF path.
+
 
 ---
 
