@@ -185,15 +185,7 @@ If you'd like to improve this project:
 
 ---
 
-## 📸 Screenshots
 
-You can also add screenshots here.
-
-| Home Page                  | Add Task                           |
-| -------------------------- | ---------------------------------- |
-| ![Home](./assets/home.png) | ![Add Task](./assets/add-task.png) |
-
----
 
 ## ⭐ Support
 
