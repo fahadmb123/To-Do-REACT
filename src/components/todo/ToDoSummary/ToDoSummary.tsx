@@ -1,7 +1,7 @@
 import "./ToDoSummary.css";
 import { getSummary } from "../../../service/toDoService";
 import useTodoStore from "../../../store/toDoStore";
-
+import { getTransaction } from "../../../repository/ToDoRepository";
 
 function ToDoSummary() {
 
@@ -26,6 +26,11 @@ function ToDoSummary() {
         <div className="summary-item">
           <span>Pending</span>
           <strong>{result.pending}</strong>
+        </div>
+
+        <div className="summary-item">
+          <span>Transaction</span>
+          <strong>{getTransaction()}</strong>
         </div>
       </div>
     </div>

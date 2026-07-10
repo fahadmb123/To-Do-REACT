@@ -4,6 +4,7 @@ import useTodoStore from "../store/toDoStore";
 
 
 
+
 export function addToDo (title: string, deadline: string):messageType {
     if (title.trim().length < 4) {
         return {
@@ -109,12 +110,15 @@ export function getSummary(todos: ToDo[]): summaryDetails {
         const deadline = new Date(todo.deadline);
         return !todo.completed && deadline >= today;
     });
-
+    
+    
     return {
         totalTask: todos.length,
         completedTask: completed.length,
         pending: pending.length,
     };
 }
+
+
 
 

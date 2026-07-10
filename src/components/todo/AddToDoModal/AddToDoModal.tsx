@@ -6,6 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { addToDo,updateToDo } from "../../../service/toDoService";
 
 
+
+
 function showMessage (result:messageType) {
   if (result.success) {
     toast.success(result.message)
@@ -39,6 +41,7 @@ function Modal({closeModal,toDo}:ModalProps) {
 
     const fail = showMessage(result)
     if (fail) return
+    
     closeModal();
   }
 
