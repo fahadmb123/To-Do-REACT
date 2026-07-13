@@ -6,9 +6,13 @@ import useTodoStore from "../../../store/toDoStore";
 
 
 
+
 function ToDoSummary() {
 
+  
   const todos = useTodoStore((state) => state.todos);
+
+
   const transaction = useTodoStore((state) => state.transaction)
   const result = getSummary(todos);
   
