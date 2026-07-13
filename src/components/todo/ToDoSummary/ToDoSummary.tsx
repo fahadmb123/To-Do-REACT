@@ -1,11 +1,15 @@
 import "./ToDoSummary.css";
 import { getSummary } from "../../../service/toDoService";
 import useTodoStore from "../../../store/toDoStore";
-import { getTransaction } from "../../../repository/ToDoRepository";
+
+
+
+
 
 function ToDoSummary() {
 
   const todos = useTodoStore((state) => state.todos);
+  const transaction = useTodoStore((state) => state.transaction)
   const result = getSummary(todos);
   
   return (
@@ -30,7 +34,7 @@ function ToDoSummary() {
 
         <div className="summary-item">
           <span>Transaction</span>
-          <strong>{getTransaction()}</strong>
+          <strong>{transaction}</strong>
         </div>
       </div>
     </div>

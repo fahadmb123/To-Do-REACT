@@ -13,6 +13,8 @@ export type ToDo = {
 
 
 export type ToDoStore = {
+  transaction : number,
+  increaseTrans : (()=>void),
   todos : ToDo[];
   toggleCompleted: (id: number) => void;
   setToDos: (toDos: ToDo[]) => void;

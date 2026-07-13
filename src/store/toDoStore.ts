@@ -3,6 +3,11 @@ import type { ToDoStore,ToDo } from "../types/modal";
 
 
 const useTodoStore = create<ToDoStore>((set) => ({
+    transaction : 0,
+    increaseTrans :() =>
+        set((state) => ({
+            transaction : state.transaction + 1
+        })) ,
     todos: [],
     toggleCompleted: (id:number) =>
         set((state) => ({
