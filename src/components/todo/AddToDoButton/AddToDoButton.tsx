@@ -20,7 +20,6 @@ function AddButton () {
                 <Modal closeModal = {()=>{setModalState(false)}}/>
             )}
         </>
-        
     )
 }
 export default AddButton

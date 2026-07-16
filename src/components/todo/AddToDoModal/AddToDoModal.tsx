@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import {  toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addToDo,updateToDo } from "../../../service/toDoService";
-import useTodoStore from "../../../store/toDoStore";
+//import useTodoStore from "../../../store/toDoStore";
 
 
 
@@ -34,7 +34,7 @@ function Modal({closeModal,toDo}:ModalProps) {
       })
       const fail = showMessage(result)
       if (fail) return
-      useTodoStore.getState().increaseTrans()
+      //useTodoStore.getState().increaseTrans()
       closeModal();
       
       return
@@ -45,7 +45,7 @@ function Modal({closeModal,toDo}:ModalProps) {
     const fail = showMessage(result)
     if (fail) return
     
-    useTodoStore.getState().increaseTrans()
+    //useTodoStore.getState().increaseTrans()
     closeModal();
   }
 
