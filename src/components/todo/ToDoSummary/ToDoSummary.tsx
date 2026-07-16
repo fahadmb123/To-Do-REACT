@@ -13,7 +13,7 @@ function ToDoSummary() {
   const todos = useTodoStore((state) => state.todos);
 
 
-  const transaction = useTodoStore((state) => state.transaction)
+  //const transaction = useTodoStore((state) => state.transaction)
   const result = getSummary(todos);
   
   return (
@@ -34,11 +34,6 @@ function ToDoSummary() {
         <div className="summary-item">
           <span>Pending</span>
           <strong>{result.pending}</strong>
-        </div>
-
-        <div className="summary-item">
-          <span>Transaction</span>
-          <strong>{transaction}</strong>
         </div>
       </div>
     </div>
